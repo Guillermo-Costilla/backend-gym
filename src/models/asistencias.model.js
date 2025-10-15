@@ -35,11 +35,12 @@ export async function getAsistenciasPorDia(fecha) {
     SELECT clientes.nombre, COUNT(*) AS asistencias
     FROM asistencias
     JOIN clientes ON clientes.id = asistencias.cliente_id
-    WHERE DATE(fecha_hora) = ?
+    WHERE DATE(hora_ingreso) = ?
     GROUP BY cliente_id
-  `, [fecha]);
-  return result.rows;
+  `, [fecha])
+  return result.rows
 }
+
 
 // ➕ Crear asistencia
 export async function crearAsistencia({ cliente_id, hora_ingreso, hora_salida }) {
