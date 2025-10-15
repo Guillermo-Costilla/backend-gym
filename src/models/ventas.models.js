@@ -87,7 +87,7 @@ export async function getVentasDelDia(fecha) {
   const result = await db.execute(`
     SELECT COUNT(*) AS total
     FROM ventas
-    WHERE DATE(fecha) = ?
+    WHERE DATE(fecha_venta) = ?
   `, [fecha]);
   return result.rows[0]?.total || 0;
 }
