@@ -110,7 +110,7 @@ export async function registrarUsuario(req, res) {
     const password_hash = await bcrypt.hash(password, 10);
     const id = await crearUsuario({ nombre, email, password_hash, rol });
 
-    const token = jwt.sign({ id, rol }, process.env.JWT_SECRET, { expiresIn: "2h" });
+    const token = jwt.sign({ id: id.toString(), rol }, process.env.JWT_SECRET, { expiresIn: "2h" });
 
     res.status(201).json({
       mensaje: "Registro exitoso",
