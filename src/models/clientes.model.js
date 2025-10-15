@@ -71,7 +71,7 @@ export async function getClientesActivos() {
 // 📊 Nuevos clientes por mes
 export async function getNuevosClientesPorMes() {
   const result = await db.execute(`
-    SELECT strftime('%Y-%m', fecha_alta) AS mes, COUNT(*) AS nuevos
+    SELECT strftime('%Y-%m', fecha_registro) AS mes, COUNT(*) AS nuevos
     FROM clientes
     GROUP BY mes
     ORDER BY mes DESC
