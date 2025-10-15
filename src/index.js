@@ -24,7 +24,9 @@ cron.schedule("0 9 * * *", async () => {
   await notificarCumpleaños();
 });
 
-
+app.get("/", (req, res) => {
+  res.send("🚀 CRM Gym API funcionando 💪🏋️‍♂️");
+});
 app.use("/clientes", clientesRoutes);
 app.use("/pagos", pagosRoutes);
 app.use("/productos", productosRoutes);
