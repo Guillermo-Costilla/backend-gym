@@ -1,0 +1,37 @@
+{
+  "name": "backend-gym",
+  "version": "1.0.0",
+  "description": "Backend profesional para CRM de gimnasio con Turso, Express y lógica modular",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "crm",
+    "gym",
+    "backend",
+    "express",
+    "turso",
+    "libsql"
+  ],
+  "author": "Guillermo Costilla",
+  "license": "MIT",
+  "packageManager": "pnpm@10.17.1",
+  "dependencies": {
+    "@libsql/client": "^0.15.15",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "exceljs": "^4.4.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.9",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
