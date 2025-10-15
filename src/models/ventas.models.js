@@ -97,20 +97,20 @@ export async function getIngresosDelDia(fecha) {
     SELECT SUM(p.precio * v.cantidad) AS ingresos
     FROM ventas v
     JOIN productos p ON p.id = v.producto_id
-    WHERE DATE(v.fecha) = ?
+    WHERE DATE(v.fecha_venta) = ?
   `, [fecha]);
   return result.rows[0]?.ingresos || 0;
 }
 
 export async function getVentasPorMes(mes) {
   const result = await db.execute(`
-    SELECT ventas.id, ventas.cantidad, ventas.fecha,
+    SELECT ventas.id, ventas.cantidad, ventas.fecha_venta,
            productos.nombre AS producto,
            clientes.nombre AS cliente
     FROM ventas
     JOIN productos ON productos.id = ventas.producto_id
     JOIN clientes ON clientes.id = ventas.cliente_id
-    WHERE strftime('%Y-%m', ventas.fecha) = ?
+    WHERE strftime('%Y-%m', ventas.fecha_venta) = ?
   `, [mes]);
   return result.rows;
 }
