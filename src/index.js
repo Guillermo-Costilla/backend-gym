@@ -14,7 +14,18 @@ import { notificarPagosVencidos, notificarCumpleaños } from "./jobs/notificacio
 
 const app = express();
 dotenv.config();
-app.use(cors());
+
+const FRONT_URL = process.env.FRONT_URL
+
+app.use(
+  cors({
+    origin: FRONT_URL,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+)
+
+
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
