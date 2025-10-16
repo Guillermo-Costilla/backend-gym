@@ -22,11 +22,11 @@ export async function getClientePorDNI(dni) {
 
 
 // ➕ Crear nuevo cliente
-export async function crearCliente({ nombre, email, telefono, fecha_nacimiento }) {
+export async function crearCliente({ nombre, email, telefono, fecha_nacimiento, dni }) {
   const result = await db.execute(
-    `INSERT INTO clientes (nombre, email, telefono, fecha_nacimiento)
+    `INSERT INTO clientes (nombre, email, telefono, fecha_nacimiento, dni)
      VALUES (?, ?, ?, ?, ?)`,
-    [nombre, email, telefono, fecha_nacimiento]
+    [nombre, email, telefono, fecha_nacimiento, dni]
   );
   return result.lastInsertRowid;
 }
