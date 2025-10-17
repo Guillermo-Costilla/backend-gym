@@ -10,6 +10,7 @@ import {
 
 } from "../models/clientes.model.js";
 import { clienteSchema } from "../schemas/clientes.schema.js";
+import { enviarEmail } from "../utils/mailer.js";
 
 
 // 🧍 Listar todos los clientes
@@ -38,30 +39,33 @@ export async function verCliente(req, res) {
   }
 }
 
-// ➕ Crear cliente
+// ➕ Crear cliente^
 export async function crearNuevoCliente(req, res) {
+  const parseado = clienteSchema.safeParse(req.body)
+  if (!parseado.success) {
+    return res.status(400).json({
+      error: "Datos inválidos",
+      detalles: parseado.error.errors
+    })
+  }
+
   try {
-    const parseado = clienteSchema.safeParse(req.body);
-    if (!parseado.success) {
-      return res.status(400).json({ error: "Datos inválidos", detalles: parseado.error.errors });
-    }
-
-    const { nombre, email } = parseado.data;
-
-    const id = await crearCliente(parseado.data);
+    const { nombre, email } = parseado.data
+    const id = await crearCliente(parseado.data)
 
     await enviarEmail({
       to: email,
       subject: "¡Bienvenido al gimnasio 💪!",
-      html: `<h2>Hola ${nombre} 👋</h2><p>Gracias por registrarte. ¡Te esperamos para entrenar!</p>`,
-    });
+      html: `<h2>Hola ${nombre} 👋</h2><p>Gracias por registrarte. ¡Te esperamos para entrenar!</p>`
+    })
 
-    res.status(201).json({ id });
+    res.status(201).json({ id })
   } catch (error) {
-    console.error("❌ Error al crear cliente:", error);
-    res.status(500).json({ error: "Error al crear cliente" });
+    console.error("❌ Error al crear cliente:", error)
+    res.status(500).json({ error: "Error al crear cliente" })
   }
 }
+
 
 
 

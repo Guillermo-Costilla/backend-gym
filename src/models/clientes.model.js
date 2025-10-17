@@ -20,7 +20,6 @@ export async function getClientePorDNI(dni) {
   return result.rows[0] || null;
 }
 
-
 // ➕ Crear nuevo cliente
 export async function crearCliente({ nombre, email, telefono, fecha_nacimiento, dni }) {
   // Validación defensiva
@@ -35,27 +34,26 @@ export async function crearCliente({ nombre, email, telefono, fecha_nacimiento, 
   }
 
   // Normalización segura
-  const safeEmail = email?.trim() || null
-  const safeTelefono = telefono?.trim() || null
+  const safeEmail = typeof email === "string" ? email.trim() : null
+  const safeTelefono = typeof telefono === "string" ? telefono.trim() : null
+  const safeFecha = typeof fecha_nacimiento === "string" ? fecha_nacimiento : null
 
-  // Log para debugging
   console.log("✅ Insertando cliente:", {
     nombre,
     email: safeEmail,
     telefono: safeTelefono,
-    fecha_nacimiento,
+    fecha_nacimiento: safeFecha,
     dni
   })
 
   const result = await db.execute(
     `INSERT INTO clientes (nombre, email, telefono, fecha_nacimiento, dni)
      VALUES (?, ?, ?, ?, ?)`,
-    [nombre, safeEmail, safeTelefono, fecha_nacimiento, dni]
+    [nombre, safeEmail, safeTelefono, safeFecha, dni]
   )
 
   return result.lastInsertRowid
 }
-
 
 // ✏️ Actualizar cliente
 export async function actualizarCliente(id, data) {
