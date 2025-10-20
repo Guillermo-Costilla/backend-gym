@@ -115,7 +115,7 @@ export async function registrarUsuario(req, res) {
     res.status(201).json({
       mensaje: "Registro exitoso",
       token,
-      usuario: { id, nombre, email, rol },
+      usuario: { id: id.toString(), nombre, email, rol },
     });
   } catch (error) {
     console.error("❌ Error en registro:", error);
