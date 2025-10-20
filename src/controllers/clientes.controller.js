@@ -59,7 +59,7 @@ export async function crearNuevoCliente(req, res) {
       html: `<h2>Hola ${nombre} 👋</h2><p>Gracias por registrarte. ¡Te esperamos para entrenar!</p>`
     })
 
-    res.status(201).json({ id })
+    res.status(201).json({ id: Number(id) })
   } catch (error) {
     console.error("❌ Error al crear cliente:", error)
     res.status(500).json({ error: "Error al crear cliente" })
