@@ -112,7 +112,15 @@ export async function verConcurrenciaActual(req, res) {
 
 export async function verAsistenciasPorDia(req, res) {
   try {
-    const { fecha } = req.query;
+    let { fecha } = req.query;
+
+    // 🧱 Sanitizar fecha: convertir a string YYYY-MM-DD si viene como Date u otro tipo
+    if (!fecha) {
+      fecha = new Date().toISOString().split("T")[0]; // default: hoy
+    } else if (typeof fecha !== "string") {
+      fecha = new Date(fecha).toISOString().split("T")[0];
+    }
+
     const asistencias = await getAsistenciasPorDia(fecha);
     res.json(asistencias);
   } catch (error) {
