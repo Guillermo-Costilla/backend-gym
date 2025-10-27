@@ -38,13 +38,13 @@ export async function verPago(req, res) {
 // ➕ Crear nuevo pago
 export async function crearNuevoPago(req, res) {
   try {
-    const { cliente_id, monto, tipo, fecha_pago, pagado } = req.body;
+    const { cliente_id, monto, tipo, fecha_pago, pagado, metodo  } = req.body;
 
-    if (!cliente_id || !monto || !tipo || !fecha_pago) {
+    if (!cliente_id || !monto || !tipo || !fecha_pago || !metodo) {
       return res.status(400).json({ error: "Faltan campos obligatorios" });
     }
 
-    const id = await crearPago({ cliente_id, monto, tipo, fecha_pago, pagado });
+    const id = await crearPago({ cliente_id, monto, tipo, fecha_pago, pagado, metodo });
 
     const cliente = await getClientePorId(cliente_id);
     if (cliente?.email) {
@@ -53,7 +53,7 @@ export async function crearNuevoPago(req, res) {
         subject: "Pago registrado",
         html: `
           <h2>Hola ${cliente.nombre} 👋</h2>
-          <p>Tu pago de <strong>$${monto}</strong> (${tipo}) fue registrado correctamente el <strong>${fecha_pago}</strong>.</p>
+          <p>Tu pago de <strong>$${monto}</strong> (${tipo}) fue registrado correctamente el <strong>${fecha_pago}</strong>, el metodo de pago elegido fue <strong>${metodo}</strong>.</p>
           <p>Gracias por mantenerte al día 💪</p>
         `,
       });

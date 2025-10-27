@@ -23,11 +23,11 @@ export async function getPagoPorId(id) {
 }
 
 // ➕ Crear nuevo pago
-export async function crearPago({ cliente_id, monto, tipo, fecha_pago, pagado = 1 }) {
+export async function crearPago({ cliente_id, monto, tipo, fecha_pago, pagado = 1, metodo }) {
   const result = await db.execute(`
-    INSERT INTO pagos (cliente_id, monto, tipo, fecha_pago, pagado)
-    VALUES (?, ?, ?, ?, ?)
-  `, [cliente_id, monto, tipo, fecha_pago, pagado]);
+    INSERT INTO pagos (cliente_id, monto, tipo, fecha_pago, pagado, metodo)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `, [cliente_id, monto, tipo, fecha_pago, pagado, metodo]);
   return result.lastInsertRowid;
 }
 
