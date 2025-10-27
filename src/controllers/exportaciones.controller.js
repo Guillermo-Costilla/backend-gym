@@ -1,7 +1,7 @@
 import { generarExcelPagos } from "../utils/excel.js";
 import { getPagosPorMes } from "../models/pagos.model.js";
 import { generarExcelVentas } from "../utils/excel.js";
-import { getVentasPorMes } from "../models/ventas.model.js";
+import { getVentasPorMes } from "../models/ventas.models.js";
 
 export async function exportarPagosPorMes(req, res) {
   try {
