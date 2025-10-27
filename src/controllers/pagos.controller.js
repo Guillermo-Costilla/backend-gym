@@ -59,7 +59,7 @@ export async function crearNuevoPago(req, res) {
       });
     }
 
-    res.status(201).json({ id });
+    res.status(201).json({ id: id.toString() });
   } catch (error) {
     console.error("❌ Error al crear pago:", error);
     res.status(500).json({ error: "Error al crear pago" });
