@@ -15,10 +15,6 @@ const router = Router();
 
 // 💳 CRUD básico
 router.get("/", listarPagos);
-router.get("/:id", verPago);
-router.post("/", verificarToken, verificarRol("admin"), crearNuevoPago);
-router.put("/:id", verificarToken, verificarRol("admin"), modificarPago);
-router.delete("/:id", verificarToken, verificarRol("admin"), borrarPago);
 
 // 🔴 Pagos vencidos
 router.get("/vencidos", listarPagosVencidos);
@@ -28,5 +24,18 @@ router.get("/proximos", listarPagosProximos);
 
 // 📊 Métrica mensual
 router.get("/ingresos/mensuales", verIngresosMensuales);
+
+// 🔍 Ver pago por ID (debe ir al final)
+router.get("/:id", verPago);
+
+// ✏️ Modificar pago
+router.put("/:id", verificarToken, verificarRol("admin"), modificarPago);
+
+// 🗑️ Borrar pago
+router.delete("/:id", verificarToken, verificarRol("admin"), borrarPago);
+
+// ➕ Crear nuevo pago
+router.post("/", verificarToken, verificarRol("admin"), crearNuevoPago);
+
 
 export default router;
