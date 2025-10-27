@@ -8,6 +8,7 @@ import asistenciasRoutes from "./routes/asistencias.routes.js";
 import ventasRoutes from "./routes/ventas.routes.js";
 import usuariosRoutes from "./routes/usuarios.routes.js";
 import dashboardRoutes from "./routes/dashboard.routes.js";
+import exportacionesRoutes from "./routes/exportaciones.routes.js";
 import cron from "node-cron";
 import { notificarPagosVencidos, notificarCumpleaños } from "./jobs/notificaciones.js";
 
@@ -45,6 +46,7 @@ app.use("/asistencias", asistenciasRoutes);
 app.use("/ventas", ventasRoutes);
 app.use("/usuarios", usuariosRoutes);
 app.use("/dashboard", dashboardRoutes);
+app.use("/exportaciones", exportacionesRoutes);
 
 
 app.listen(PORT, () => {
