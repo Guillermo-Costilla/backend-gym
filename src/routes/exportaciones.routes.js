@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { exportarPagosPorMes, exportarVentasPorMes } from "../controllers/exportaciones.controller.js";
-import { verificarToken, verificarRol } from "../middleware/auth.js";
+import { verificarToken, verificarRol } from "../middlewares/auth.js";
 
 const router = Router();
 
