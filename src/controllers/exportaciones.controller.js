@@ -5,11 +5,14 @@ import { getVentasPorMes } from "../models/ventas.models.js";
 
 export async function exportarPagosPorMes(req, res) {
   try {
-    const { mes } = req.query; // formato: "2025-10"
+    const mesOriginal = req.query.mes;
+    const mes = mesOriginal?.trim(); // elimina espacios y saltos
+
+    console.log("🧪 Mes recibido:", JSON.stringify(mes));
+
     if (!mes || !/^\d{4}-\d{2}$/.test(mes)) {
       return res.status(400).json({ error: "Mes requerido en formato YYYY-MM" });
     }
-    console.log("🧪 Mes recibido:", JSON.stringify(mes));
 
     const pagos = await getPagosPorMes(mes);
     const excelBuffer = await generarExcelPagos(pagos);
@@ -24,6 +27,7 @@ export async function exportarPagosPorMes(req, res) {
     res.status(500).json({ error: "Error al generar Excel" });
   }
 }
+
 
 export async function exportarVentasPorMes(req, res) {
   try {
