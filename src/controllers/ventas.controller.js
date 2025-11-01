@@ -36,7 +36,7 @@ export async function verVenta(req, res) {
 // ➕ Crear nueva venta
 export async function crearNuevaVenta(req, res) {
   const { cliente_id, producto_id, cantidad } = req.body;
-  const id = await registrarVenta({ cliente_id, producto_id, cantidad });
+  const id = await crearVenta({ cliente_id, producto_id, cantidad });
 
   const cliente = await getClientePorId(cliente_id);
   const producto = await getProductoPorId(producto_id);

@@ -1,0 +1,608 @@
+{
+  "yaakVersion": "2025.7.3",
+  "yaakSchema": 4,
+  "timestamp": "2025-10-27T23:38:08.927194400",
+  "resources": {
+    "workspaces": [
+      {
+        "model": "workspace",
+        "id": "wk_VHKyDpfooU",
+        "createdAt": "2025-10-26T22:37:31.637019200",
+        "updatedAt": "2025-10-26T22:37:31.637025100",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Yaak",
+        "encryptionKeyChallenge": null,
+        "settingValidateCertificates": true,
+        "settingFollowRedirects": true,
+        "settingRequestTimeout": 0
+      }
+    ],
+    "environments": [],
+    "folders": [
+      {
+        "model": "folder",
+        "id": "fl_pHtsAverTu",
+        "createdAt": "2025-10-27T21:52:10.149320900",
+        "updatedAt": "2025-10-27T21:52:10.149321700",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_7geTR9YLdh",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Asistencias",
+        "sortPriority": -1761601900000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_FJzAQWNHQK",
+        "createdAt": "2025-10-26T23:51:29.632274200",
+        "updatedAt": "2025-10-26T23:51:29.632275800",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_7geTR9YLdh",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Pagos",
+        "sortPriority": -1761522700000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_KKu2Tjuzxd",
+        "createdAt": "2025-10-26T23:44:18.948057400",
+        "updatedAt": "2025-10-26T23:44:18.948058600",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_7geTR9YLdh",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Metricas",
+        "sortPriority": -1761522200000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_sX4EBdxQ5B",
+        "createdAt": "2025-10-26T22:54:53.256186500",
+        "updatedAt": "2025-10-26T22:54:53.256187200",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_7geTR9YLdh",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Clientes",
+        "sortPriority": -1761519300000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_eJhWjGyH4h",
+        "createdAt": "2025-10-26T22:47:18.986776800",
+        "updatedAt": "2025-10-26T22:47:18.986777500",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_7geTR9YLdh",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Autenticación",
+        "sortPriority": -1761518800000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_7geTR9YLdh",
+        "createdAt": "2025-10-26T22:47:03.390287100",
+        "updatedAt": "2025-10-26T22:47:03.390287800",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "CRM Gym",
+        "sortPriority": -1761518800000.0
+      }
+    ],
+    "httpRequests": [
+      {
+        "model": "http_request",
+        "id": "rq_2mahjEmj3f",
+        "createdAt": "2025-10-27T21:54:07.410887200",
+        "updatedAt": "2025-10-27T23:31:36.116650500",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_pHtsAverTu",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE2MDE4MDAsImV4cCI6MTc2MTYwOTAwMH0.tf4lRDl73FFpMO9dstevLdcj98_w-hOlZUnjHUHRkLg"
+        },
+        "authenticationType": "bearer",
+        "body": {
+          "text": "{\n  \"dni\":\"39921167\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "70e3s5EQeI"
+          }
+        ],
+        "method": "GET",
+        "name": "Registro QR DNI",
+        "sortPriority": -1761518854965.998,
+        "url": "https://crm-gym-pi.vercel.app/exportaciones/ventas?mes=2025-10",
+        "urlParameters": [
+          {
+            "enabled": false,
+            "name": "Mes",
+            "value": "2025-10\n",
+            "id": "BSsRkMHNR6"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "mE8cXq3jUr"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_MQ2RgFkwr6",
+        "createdAt": "2025-10-27T21:52:13.094743200",
+        "updatedAt": "2025-10-27T21:53:49.299276300",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_pHtsAverTu",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE2MDE4MDAsImV4cCI6MTc2MTYwOTAwMH0.tf4lRDl73FFpMO9dstevLdcj98_w-hOlZUnjHUHRkLg"
+        },
+        "authenticationType": "bearer",
+        "body": {
+          "text": "{\n  \"dni\":\"39921167\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "70e3s5EQeI"
+          }
+        ],
+        "method": "POST",
+        "name": "Registro QR DNI",
+        "sortPriority": -1761518854965.999,
+        "url": "https://crm-gym-pi.vercel.app/asistencias/registro",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_myEzkbEyik",
+        "createdAt": "2025-10-27T21:49:23.531207300",
+        "updatedAt": "2025-10-27T21:50:18.510244",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_FJzAQWNHQK",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE2MDE4MDAsImV4cCI6MTc2MTYwOTAwMH0.tf4lRDl73FFpMO9dstevLdcj98_w-hOlZUnjHUHRkLg"
+        },
+        "authenticationType": "bearer",
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "DELETE",
+        "name": "Eliminar Pago",
+        "sortPriority": -1761518854965.999,
+        "url": "https://crm-gym-pi.vercel.app/pagos/12",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_7Yb5cNockt",
+        "createdAt": "2025-10-27T21:42:33.041841300",
+        "updatedAt": "2025-10-27T21:46:07.882802500",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_FJzAQWNHQK",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Ingresos mensuales",
+        "sortPriority": -1761518854965.997,
+        "url": "https://crm-gym-pi.vercel.app/pagos/ingresos/mensuales                                                                                                ",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": "dias",
+            "value": "7\n",
+            "id": "se7ZHDmFw9"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_EvFm3EoWHv",
+        "createdAt": "2025-10-27T21:41:42.042454500",
+        "updatedAt": "2025-10-27T21:42:00.760916100",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_FJzAQWNHQK",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Pagos próximos",
+        "sortPriority": -1761518854965.998,
+        "url": "https://crm-gym-pi.vercel.app/pagos/proximos",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": "dias",
+            "value": "7\n",
+            "id": "se7ZHDmFw9"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_KRyogb7xNF",
+        "createdAt": "2025-10-27T21:33:29.612811600",
+        "updatedAt": "2025-10-27T21:37:29.703108800",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_FJzAQWNHQK",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1OTg2NTEsImV4cCI6MTc2MTYwNTg1MX0.xbvJEQh0jfrND8LBJ63Hy0wwbtXM811RI34AglUk3bw"
+        },
+        "authenticationType": "bearer",
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Pagos vencidos",
+        "sortPriority": -1761518854965.999,
+        "url": "https://crm-gym-pi.vercel.app/pagos/vencidos",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_3hamV3DWJF",
+        "createdAt": "2025-10-27T21:31:07.649192500",
+        "updatedAt": "2025-10-27T21:31:32.908183900",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_KKu2Tjuzxd",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1OTg2NTEsImV4cCI6MTc2MTYwNTg1MX0.xbvJEQh0jfrND8LBJ63Hy0wwbtXM811RI34AglUk3bw"
+        },
+        "authenticationType": "bearer",
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Metrica clientes nuevos",
+        "sortPriority": -1761518854965.999,
+        "url": "https://crm-gym-pi.vercel.app/clientes/metricas/nuevos",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_munukDbuxV",
+        "createdAt": "2025-10-27T21:28:59.907770400",
+        "updatedAt": "2025-10-27T21:30:56.915224400",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_KKu2Tjuzxd",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1OTg2NTEsImV4cCI6MTc2MTYwNTg1MX0.xbvJEQh0jfrND8LBJ63Hy0wwbtXM811RI34AglUk3bw"
+        },
+        "authenticationType": "bearer",
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Metrica clientes activos",
+        "sortPriority": -1761518854966.0,
+        "url": "https://crm-gym-pi.vercel.app/clientes/metricas/activos",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_eoTiWwtkVk",
+        "createdAt": "2025-10-27T21:25:45.573957",
+        "updatedAt": "2025-10-27T21:27:18.392281600",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_FJzAQWNHQK",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1OTg2NTEsImV4cCI6MTc2MTYwNTg1MX0.xbvJEQh0jfrND8LBJ63Hy0wwbtXM811RI34AglUk3bw"
+        },
+        "authenticationType": "bearer",
+        "body": {
+          "text": "{\n  \"monto\": 5500,\n  \"metodo\": \"transferencia\"\n}\n"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "rigbeyRNPx"
+          }
+        ],
+        "method": "PUT",
+        "name": "Actualizar pago",
+        "sortPriority": -1761518854966.0,
+        "url": "https://crm-gym-pi.vercel.app/pagos/20",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_isowXNEfwM",
+        "createdAt": "2025-10-26T23:53:36.023903100",
+        "updatedAt": "2025-10-27T21:24:07.189618300",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_FJzAQWNHQK",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1OTg2NTEsImV4cCI6MTc2MTYwNTg1MX0.xbvJEQh0jfrND8LBJ63Hy0wwbtXM811RI34AglUk3bw"
+        },
+        "authenticationType": "bearer",
+        "body": {
+          "text": "{\n  \"cliente_id\": 20,\n  \"monto\": 5000,\n  \"tipo\": \"Mensual\",\n  \"fecha_pago\": \"2025-10-28\",\n  \"pagado\": 1,\n  \"metodo\": \"efectivo\"\n}\n"
+        },
+        "bodyType": "application/json",
+        "description": "Probado, requiere token y rol admin.",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "xMciHEtcya"
+          }
+        ],
+        "method": "POST",
+        "name": "Crear Pago",
+        "sortPriority": -1761518854966.0,
+        "url": "https://crm-gym-pi.vercel.app/pagos",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_Ygc9qmDVXg",
+        "createdAt": "2025-10-26T23:52:23.386296300",
+        "updatedAt": "2025-10-26T23:53:21.350875500",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_FJzAQWNHQK",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1MTkxNjUsImV4cCI6MTc2MTUyNjM2NX0.KH-CrVg1iN1NJVFMMlU7_469G1meQy_jTBBhZDaSBFU"
+        },
+        "authenticationType": "bearer",
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Pagos por id",
+        "sortPriority": -1761518854966.0,
+        "url": "https://crm-gym-pi.vercel.app/pagos/12",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_42BdvjTBeF",
+        "createdAt": "2025-10-26T23:51:34.299254800",
+        "updatedAt": "2025-10-26T23:52:06.903319",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_FJzAQWNHQK",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1MTkxNjUsImV4cCI6MTc2MTUyNjM2NX0.KH-CrVg1iN1NJVFMMlU7_469G1meQy_jTBBhZDaSBFU"
+        },
+        "authenticationType": "bearer",
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Obtener pagos",
+        "sortPriority": -1761518854966.0,
+        "url": "https://crm-gym-pi.vercel.app/dashboard",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_CPo9HL5sk3",
+        "createdAt": "2025-10-26T23:44:22.251476500",
+        "updatedAt": "2025-10-26T23:47:11.503183200",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_KKu2Tjuzxd",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1MTkxNjUsImV4cCI6MTc2MTUyNjM2NX0.KH-CrVg1iN1NJVFMMlU7_469G1meQy_jTBBhZDaSBFU"
+        },
+        "authenticationType": "bearer",
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Metricas generales",
+        "sortPriority": -1761518854966.0,
+        "url": "https://crm-gym-pi.vercel.app/dashboard",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_BFpbE9qJYN",
+        "createdAt": "2025-10-26T23:37:21.109642600",
+        "updatedAt": "2025-10-26T23:41:31.344265700",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_sX4EBdxQ5B",
+        "authentication": {
+          "disabled": false,
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1MTkxNjUsImV4cCI6MTc2MTUyNjM2NX0.KH-CrVg1iN1NJVFMMlU7_469G1meQy_jTBBhZDaSBFU"
+        },
+        "authenticationType": "bearer",
+        "body": {},
+        "bodyType": null,
+        "description": "Probado. Para obtener la lista de todos los clientes, requiere token y rol de admin.",
+        "headers": [],
+        "method": "GET",
+        "name": "Obtener Clientes",
+        "sortPriority": -1761518854966.0,
+        "url": "https://crm-gym-pi.vercel.app/clientes",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_D6nwDaLM6W",
+        "createdAt": "2025-10-26T23:36:03.056328900",
+        "updatedAt": "2025-10-26T23:39:49.348285800",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_sX4EBdxQ5B",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1MTkxNjUsImV4cCI6MTc2MTUyNjM2NX0.KH-CrVg1iN1NJVFMMlU7_469G1meQy_jTBBhZDaSBFU"
+        },
+        "authenticationType": "bearer",
+        "body": {},
+        "bodyType": null,
+        "description": "Peticion probada para \"Eliminar un cliente\" con su ID, hay que tener el token y rol admin.",
+        "headers": [],
+        "method": "DELETE",
+        "name": "Eliminar Cliente",
+        "sortPriority": -1761518854966.0,
+        "url": "https://crm-gym-pi.vercel.app/clientes/25",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_Pe8ScpfmqU",
+        "createdAt": "2025-10-26T23:32:03.348055800",
+        "updatedAt": "2025-10-26T23:40:23.860321",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_sX4EBdxQ5B",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1MTkxNjUsImV4cCI6MTc2MTUyNjM2NX0.KH-CrVg1iN1NJVFMMlU7_469G1meQy_jTBBhZDaSBFU"
+        },
+        "authenticationType": "bearer",
+        "body": {
+          "text": "{\n  \"nombre\": \"Juan Pérez Actualizado\",\n  \"telefono\": \"3817654321\"\n}\n"
+        },
+        "bodyType": "application/json",
+        "description": "Probado, para actualizar clientes, requiere token y rol de admin.",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "CYbXUA9nDR"
+          }
+        ],
+        "method": "PUT",
+        "name": "Actualizar Cliente",
+        "sortPriority": -1761518854966.0,
+        "url": "https://crm-gym-pi.vercel.app/clientes/25",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_VGknWTK9Ld",
+        "createdAt": "2025-10-26T22:54:57.119729600",
+        "updatedAt": "2025-10-26T23:41:03.500900200",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_sX4EBdxQ5B",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1MTkxNjUsImV4cCI6MTc2MTUyNjM2NX0.KH-CrVg1iN1NJVFMMlU7_469G1meQy_jTBBhZDaSBFU"
+        },
+        "authenticationType": "bearer",
+        "body": {
+          "text": "{\n  \"nombre\": \"Juan Pérez\",\n  \"dni\": \"12345678\",\n  \"email\": \"juan.perez@example.com\",\n  \"telefono\": \"3811234567\",\n  \"fecha_nacimiento\": \"1990-05-15\"\n}\n"
+        },
+        "bodyType": "application/json",
+        "description": "Probado, requiere rol admin y token. También los datos sean correctos y validos.",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "YeTDM3Z8kg"
+          }
+        ],
+        "method": "POST",
+        "name": "Crear Cliente",
+        "sortPriority": -1761518854966.0,
+        "url": "https://crm-gym-pi.vercel.app/clientes",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_YfPxebKhS8",
+        "createdAt": "2025-10-26T22:52:16.719633800",
+        "updatedAt": "2025-10-27T21:49:57.830700300",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_eJhWjGyH4h",
+        "authentication": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQxMDUxODNmYzYyYmJmYjYwN2Y2ZjU4ZTg5ZmNlMjlmIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE3NjE1OTg2NTEsImV4cCI6MTc2MTYwNTg1MX0.xbvJEQh0jfrND8LBJ63Hy0wwbtXM811RI34AglUk3bw"
+        },
+        "authenticationType": "bearer",
+        "body": {
+          "text": "{\n  \"email\": \"guille.test@example.com\",\n  \"password\": \"12345678\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "Probado.",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "2Hk8f3gA20"
+          }
+        ],
+        "method": "POST",
+        "name": "Login Usuario",
+        "sortPriority": -1761518854966.0,
+        "url": "https://crm-gym-pi.vercel.app/usuarios/login",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_8HTreGmY4t",
+        "createdAt": "2025-10-26T22:47:34.968314100",
+        "updatedAt": "2025-10-26T23:42:06.900255300",
+        "workspaceId": "wk_VHKyDpfooU",
+        "folderId": "fl_eJhWjGyH4h",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"nombre\": \"Guille Costilla\",\n  \"email\": \"guille.test@example.com\",\n  \"password\": \"12345678\",\n  \"rol\": \"admin\"\n}\n"
+        },
+        "bodyType": "application/json",
+        "description": "Probado. Es necesario informar el rol, ya sea admin o staff.",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "tUtdwVmxJ6"
+          }
+        ],
+        "method": "POST",
+        "name": "Crear usuario",
+        "sortPriority": -1761518854966.0,
+        "url": "https://crm-gym-pi.vercel.app/usuarios/registro",
+        "urlParameters": []
+      }
+    ],
+    "grpcRequests": [],
+    "websocketRequests": []
+  }
+}
