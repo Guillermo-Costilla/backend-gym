@@ -18,13 +18,19 @@ dotenv.config();
 
 const FRONT_URL = process.env.FRONT_URL
 
+const allowedOrigins = [
+  FRONT_URL,
+  "http://localhost:3000", // desarrollo local
+]
+
 app.use(
   cors({
-    origin: FRONT_URL,
+    origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 )
+
 
 
 app.use(express.json());
