@@ -8,7 +8,7 @@ import {
   getProductoMasVendido,
 } from "../models/ventas.models.js";
 import { getClientePorId } from "../models/clientes.model.js";
-import { getProductoPorId } from "../models/productos.model.js";
+import { getProductoPorId } from "../models/productos.models.js";
 import { enviarEmail } from "../utils/mailer.js";
 
 // 🧾 Listar todas las ventas
