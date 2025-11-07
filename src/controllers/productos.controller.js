@@ -35,14 +35,14 @@ export async function verProducto(req, res) {
 // ➕ Crear nuevo producto
 export async function crearNuevoProducto(req, res) {
   try {
-    const { nombre, descripcion, precio, stock, activo } = req.body;
+    const { nombre, precio, stock, categoria } = req.body;
 
-    if (!nombre || precio == null || stock == null) {
+    if (!nombre || precio == null || stock == null || categoria == null) {
       return res.status(400).json({ error: "Faltan campos obligatorios" });
     }
 
-    const id = await crearProducto({ nombre, descripcion, precio, stock, activo });
-    res.status(201).json({ id });
+    const id = await crearProducto({ nombre, precio, stock, categoria });
+    res.status(201).json({ id: id.toString() });
   } catch (error) {
     console.error("❌ Error al crear producto:", error);
     res.status(500).json({ error: "Error al crear producto" });

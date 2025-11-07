@@ -19,11 +19,11 @@ export async function getProductoPorId(id) {
 }
 
 // ➕ Crear nuevo producto
-export async function crearProducto({ nombre, descripcion, precio, stock, activo = 1 }) {
+export async function crearProducto({ nombre, precio, stock, categoria }) {
   const result = await db.execute(`
-    INSERT INTO productos (nombre, descripcion, precio, stock, activo)
-    VALUES (?, ?, ?, ?, ?)
-  `, [nombre, descripcion, precio, stock, activo]);
+    INSERT INTO productos (nombre, precio, stock, categoria)
+    VALUES (?, ?, ?, ?)
+  `, [nombre, precio, stock, categoria]);
   return result.lastInsertRowid;
 }
 
