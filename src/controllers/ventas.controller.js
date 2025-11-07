@@ -49,7 +49,7 @@ export async function crearNuevaVenta(req, res) {
     html: `<p>Hola ${cliente.nombre}, compraste ${cantidad} unidad(es) de ${producto.nombre}. ¡Gracias por tu compra!</p>`,
   });
 
-  res.status(201).json({ id });
+  res.status(201).json({ id: id.toString() });
 }
 
 
