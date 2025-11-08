@@ -35,25 +35,8 @@ export async function verAsistencia(req, res) {
 }
 
 // 🟢 Registro público por DNI
-export async function registrarAsistenciaPorDNI(req, res) {
-  try {
-    const { dni } = req.body;
-    if (!dni) return res.status(400).json({ error: "DNI requerido" });
-
-    const cliente = await getClientePorDNI(dni);
-    if (!cliente) return res.status(404).json({ error: "Cliente no encontrado" });
-
-    const id = await registrarAsistencia(cliente.id);
-    res.status(201).json({ mensaje: "Asistencia registrada", cliente: cliente.nombre });
-  } catch (error) {
-    console.error("❌ Error al registrar asistencia por DNI:", error);
-    res.status(500).json({ error: "Error al registrar asistencia" });
-  }
-}
-
-
 // ➕ Crear nueva asistencia
-export async function crearNuevaAsistencia(req, res) {
+export async function registrarAsistenciaPorDNI(req, res) {
   try {
     const { cliente_id, hora_ingreso, hora_salida } = req.body;
 
