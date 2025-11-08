@@ -13,41 +13,61 @@ export async function getAllAsistencias() {
 
 // 🔍 Obtener asistencia por ID
 export async function getAsistenciaPorId(id) {
-  const result = await db.execute(`
+  const result = await db.execute(
+    `
     SELECT a.*, c.nombre AS cliente
     FROM asistencias a
     JOIN clientes c ON c.id = a.cliente_id
     WHERE a.id = ? LIMIT 1
-  `, [id]);
+  `,
+    [id]
+  );
   return result.rows[0] || null;
 }
 
-export async function registrarAsistencia(cliente_id, hora_ingreso, hora_salida) {
-  const result = await db.execute(`
-    INSERT INTO asistencias (cliente_id, hora_ingreso, hora_salida)
-    VALUES (?, ?, ?)
-  `, [cliente_id, hora_ingreso, hora_salida]);
+export async function registrarAsistencia(
+  cliente_id,
+  hora_ingreso,
+  hora_salida
+) {
+  const result = await db.execute(
+    `
+  INSERT INTO asistencias (cliente_id, hora_ingreso, hora_salida)
+  VALUES (?, ?, ?)
+`,
+    [cliente_id, hora_ingreso, hora_salida]
+  );
+
   return result.lastInsertRowid;
 }
 
 export async function getAsistenciasPorDia(fecha) {
-  const result = await db.execute(`
+  const result = await db.execute(
+    `
     SELECT clientes.nombre, COUNT(*) AS asistencias
     FROM asistencias
     JOIN clientes ON clientes.id = asistencias.cliente_id
     WHERE DATE(hora_ingreso) = ?
     GROUP BY cliente_id
-  `, [fecha])
-  return result.rows
+  `,
+    [fecha]
+  );
+  return result.rows;
 }
 
-
 // ➕ Crear asistencia
-export async function crearAsistencia({ cliente_id, hora_ingreso, hora_salida }) {
-  const result = await db.execute(`
+export async function crearAsistencia({
+  cliente_id,
+  hora_ingreso,
+  hora_salida,
+}) {
+  const result = await db.execute(
+    `
     INSERT INTO asistencias (cliente_id, hora_ingreso, hora_salida)
     VALUES (?, ?, ?)
-  `, [cliente_id, hora_ingreso, hora_salida]);
+  `,
+    [cliente_id, hora_ingreso, hora_salida]
+  );
   return result.lastInsertRowid;
 }
 

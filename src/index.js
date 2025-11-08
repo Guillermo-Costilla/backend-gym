@@ -35,7 +35,7 @@ app.use(
 
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 cron.schedule("0 9 * * *", async () => {
   console.log("⏰ Ejecutando cron diario...");
   await notificarPagosVencidos();
@@ -56,5 +56,5 @@ app.use("/exportaciones", exportacionesRoutes);
 
 
 app.listen(PORT, () => {
-  console.log("Servidor CRM Gym corriendo en puerto 3000");
+  console.log("Servidor CRM Gym corriendo en puerto 5000");
 });

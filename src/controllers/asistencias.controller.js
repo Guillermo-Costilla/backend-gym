@@ -38,13 +38,15 @@ export async function verAsistencia(req, res) {
 export async function registrarAsistenciaPorDNI(req, res) {
   try {
     const { cliente_id, hora_ingreso, hora_salida } = req.body;
+    console.log("🧾 Body recibido:", req.body);
+
 
     if (!cliente_id || !hora_ingreso || !hora_salida) {
       return res.status(400).json({ error: "Faltan campos obligatorios" });
     }
 
-    const id = await crearAsistencia({ cliente_id, hora_ingreso, hora_salida });
-    res.status(201).json({ id });
+    const id = await registrarAsistencia( cliente_id, hora_ingreso, hora_salida );
+    res.status(201).json({ id: id.toString() });
   } catch (error) {
     console.error("❌ Error al crear asistencia:", error);
     res.status(500).json({ error: "Error al crear asistencia" });
