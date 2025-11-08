@@ -35,8 +35,25 @@ export async function verAsistencia(req, res) {
 }
 
 // 🟢 Registro público por DNI
-// ➕ Crear nueva asistencia
 export async function registrarAsistenciaPorDNI(req, res) {
+  try {
+    const { cliente_id, hora_ingreso, hora_salida } = req.body;
+
+    if (!cliente_id || !hora_ingreso || !hora_salida) {
+      return res.status(400).json({ error: "Faltan campos obligatorios" });
+    }
+
+    const id = await crearAsistencia({ cliente_id, hora_ingreso, hora_salida });
+    res.status(201).json({ id });
+  } catch (error) {
+    console.error("❌ Error al crear asistencia:", error);
+    res.status(500).json({ error: "Error al crear asistencia" });
+  }
+}
+
+
+// ➕ Crear nueva asistencia
+export async function crearNuevaAsistencia(req, res) {
   try {
     const { cliente_id, hora_ingreso, hora_salida } = req.body;
 
