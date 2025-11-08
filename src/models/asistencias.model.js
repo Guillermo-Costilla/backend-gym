@@ -22,11 +22,11 @@ export async function getAsistenciaPorId(id) {
   return result.rows[0] || null;
 }
 
-export async function registrarAsistencia(cliente_id) {
+export async function registrarAsistencia(cliente_id, hora_ingreso, hora_salida) {
   const result = await db.execute(`
-    INSERT INTO asistencias (cliente_id)
-    VALUES (?)
-  `, [cliente_id]);
+    INSERT INTO asistencias (cliente_id, hora_ingreso, hora_salida)
+    VALUES (?, ?, ?)
+  `, [cliente_id, hora_ingreso, hora_salida]);
   return result.lastInsertRowid;
 }
 
